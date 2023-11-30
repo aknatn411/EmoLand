@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.TextViewCompat;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TitleScreen extends AppCompatActivity {
@@ -15,6 +16,8 @@ public class TitleScreen extends AppCompatActivity {
 
         TextView title = (TextView)findViewById(R.id.titleTextView);
         title.setText("Emo Land");
+        ImageView titleImage = (ImageView)findViewById(R.id.titleImageView);
+        titleImage.setImageResource(R.drawable.emokid2);
     }
 
 }
