@@ -19,6 +19,8 @@ public class Story {
             case "mope5min": mope5min();  break;
             case "mope1hour": mope1hour();  break;
             case "cutself": cutself(); break;
+            case "ouch": ouch(); break;
+            case "post": post(); break;
         }
     }
 
@@ -58,9 +60,45 @@ public class Story {
         gs.button3.setVisibility(View.VISIBLE);
         gs.button4.setVisibility(View.INVISIBLE);
 
-        nextPosition1 = "";
+        nextPosition1 = "ouch";
+        nextPosition2 = "ouch";
+        nextPosition3 = "ouch";
+        nextPosition4 = "";
+    }
+
+    public void ouch() {
+        gs.image.setImageResource(R.drawable.cutpalm);
+        gs.text.setText("\"Ouch!\"\nYou cut yourself (there is a little blood visible on the  scratch). Where do you want to post the photo?");
+
+        gs.button1.setText("Instagram");
+        gs.button2.setText("");
+        gs.button3.setText("");
+        gs.button4.setText("");
+        gs.button2.setVisibility(View.INVISIBLE);
+        gs.button3.setVisibility(View.INVISIBLE);
+        gs.button4.setVisibility(View.INVISIBLE);
+
+        nextPosition1 = "post";
         nextPosition2 = "";
         nextPosition3 = "";
+        nextPosition4 = "";
+    }
+
+    public void post() {
+        gs.image.setImageResource(R.drawable.think);
+        gs.text.setText("What should the caption be?");
+
+        gs.button1.setText("This is the only way I can feel anything!");
+        gs.button2.setText("I hurt more on the inside.");
+        gs.button3.setText("I don't need your attention.");
+        gs.button4.setText("");
+        gs.button2.setVisibility(View.VISIBLE);
+        gs.button3.setVisibility(View.VISIBLE);
+        gs.button4.setVisibility(View.INVISIBLE);
+
+        nextPosition1 = "startingPoint";
+        nextPosition2 = "startingPoint";
+        nextPosition3 = "startingPoint";
         nextPosition4 = "";
     }
 

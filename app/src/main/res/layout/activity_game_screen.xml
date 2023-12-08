@@ -38,7 +38,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_weight="1"
+            android:layout_weight="1.25"
             android:onClick="button1"
             android:text="Button" />
 
@@ -48,7 +48,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_weight="1"
+            android:layout_weight="1.25"
             android:onClick="button2"
             android:text="Button" />
 
@@ -58,7 +58,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_weight="1"
+            android:layout_weight="1.25"
             android:onClick="button3"
             android:text="Button" />
 
@@ -69,7 +69,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="50dp"
-            android:layout_weight="1"
+            android:layout_weight="1.25"
             android:onClick="button4"
             android:text="Button" />
     </LinearLayout>
