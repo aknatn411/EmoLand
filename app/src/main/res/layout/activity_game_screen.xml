@@ -12,6 +12,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/followersTextView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:text="You have 0 followers."
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
         <ImageView
             android:id="@+id/gameImageView"
             android:layout_width="match_parent"
@@ -38,7 +48,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_weight="1.25"
+            android:layout_weight="2"
             android:onClick="button1"
             android:text="Button" />
 
@@ -48,7 +58,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_weight="1.25"
+            android:layout_weight="2"
             android:onClick="button2"
             android:text="Button" />
 
@@ -58,7 +68,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:layout_weight="1.25"
+            android:layout_weight="2"
             android:onClick="button3"
             android:text="Button" />
 
@@ -69,7 +79,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="50dp"
-            android:layout_weight="1.25"
+            android:layout_weight="2"
             android:onClick="button4"
             android:text="Button" />
     </LinearLayout>

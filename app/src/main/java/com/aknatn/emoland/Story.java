@@ -21,6 +21,7 @@ public class Story {
             case "cutself": cutself(); break;
             case "ouch": ouch(); break;
             case "post": post(); break;
+            case "posted": posted();
         }
     }
 
@@ -32,7 +33,7 @@ public class Story {
     }
 
     public void startingPoint() {
-        gs.image.setImageResource(R.drawable.emokid2);
+        gs.image.setImageResource(R.drawable.newemoroom);
         gs.text.setText("You are in your room.");
 
         gs.button1.setText("Mope");
@@ -70,18 +71,18 @@ public class Story {
         gs.image.setImageResource(R.drawable.cutpalm);
         gs.text.setText("\"Ouch!\"\nYou cut yourself (there is a little blood visible on the  scratch). Where do you want to post the photo?");
 
-        gs.button1.setText("Instagram");
-        gs.button2.setText("");
-        gs.button3.setText("");
-        gs.button4.setText("");
-        gs.button2.setVisibility(View.INVISIBLE);
-        gs.button3.setVisibility(View.INVISIBLE);
-        gs.button4.setVisibility(View.INVISIBLE);
+        gs.button1.setText("Y (Formerly known as Twattle)");
+        gs.button2.setText("ProfileBook");
+        gs.button3.setText("QuickPhotoGram");
+        gs.button4.setText("Jizzle");
+        gs.button2.setVisibility(View.VISIBLE);
+        gs.button3.setVisibility(View.VISIBLE);
+        gs.button4.setVisibility(View.VISIBLE);
 
         nextPosition1 = "post";
-        nextPosition2 = "";
-        nextPosition3 = "";
-        nextPosition4 = "";
+        nextPosition2 = "post";
+        nextPosition3 = "post";
+        nextPosition4 = "post";
     }
 
     public void post() {
@@ -96,10 +97,15 @@ public class Story {
         gs.button3.setVisibility(View.VISIBLE);
         gs.button4.setVisibility(View.INVISIBLE);
 
-        nextPosition1 = "startingPoint";
-        nextPosition2 = "startingPoint";
-        nextPosition3 = "startingPoint";
+        nextPosition1 = "posted";
+        nextPosition2 = "posted";
+        nextPosition3 = "posted";
         nextPosition4 = "";
+    }
+
+    public void posted() {
+        gs.updateFollowers(1);
+        startingPoint();
     }
 
     public void mope(){

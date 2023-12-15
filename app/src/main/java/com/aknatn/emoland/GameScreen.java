@@ -14,6 +14,8 @@ public class GameScreen extends AppCompatActivity {
     TextView text;
     Button button1, button2, button3, button4;
     Story story = new Story(this);
+    int numFollowers;
+    TextView numFollowersText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +23,14 @@ public class GameScreen extends AppCompatActivity {
 
         image = (ImageView) findViewById(R.id.gameImageView);
         text = (TextView) findViewById(R.id.gameTextView);
+        numFollowersText = (TextView) findViewById(R.id.followersTextView);
         button1 = (Button) findViewById(R.id.choiceButton1);
         button2 = (Button) findViewById(R.id.choiceButton2);
         button3 = (Button) findViewById(R.id.choiceButton3);
         button4 = (Button) findViewById(R.id.choiceButton4);
 
         story.startingPoint();
+        updateFollowers(0);
     }
     public void button1(View view){
         story.selectPosition(story.nextPosition1);
@@ -47,5 +51,10 @@ public class GameScreen extends AppCompatActivity {
     public void goTitleScreen(){
         Intent ts = new Intent(this, TitleScreen.class);
         startActivity(ts);
+    }
+
+    public void updateFollowers(int newFollowers){
+        numFollowers += newFollowers;
+        numFollowersText.setText("You have " + numFollowers + " followers.");
     }
 }
