@@ -2,6 +2,8 @@ package com.aknatn.emoland;
 
 import android.view.View;
 
+import java.util.List;
+
 public class Story {
     GameScreen gs;
     String nextPosition1, nextPosition2, nextPosition3, nextPosition4;
@@ -22,6 +24,7 @@ public class Story {
             case "ouch": ouch(); break;
             case "post": post(); break;
             case "posted": posted();
+            case "poetry": poetry();
         }
     }
 
@@ -39,14 +42,34 @@ public class Story {
         gs.button1.setText("Mope");
         gs.button2.setText("Cut Yourself");
         gs.button3.setText("Leave Room");
-        gs.button4.setText("");
+        gs.button4.setText("Write Poetry");
 
         nextPosition1 = "mope";
         nextPosition2 = "cutself";
         nextPosition3 = "leave";
-        //nextPosition4 = "sign";
+        nextPosition4 = "poetry";
         showAllButtons();
-        gs.button4.setVisibility(View.INVISIBLE);
+    }
+
+    public void poetry() {
+        gs.image.setImageResource(R.drawable.think);
+        PoetryBuilder pb = new PoetryBuilder();
+        List<Integer> opts1 = pb.randLine1();
+        gs.text.setText("You are not ready to write poetry.");
+        String str1 = "";
+        for(int i = 0; i < opts1.size(); i++){
+            str1 += opts1.get(i).toString() + " - ";
+        }
+        gs.button1.setText("Back");
+        gs.button2.setText(str1);
+        gs.button3.setText("");
+        gs.button4.setText("");
+
+        nextPosition1 = "startingPoint";
+        nextPosition2 = "";
+        nextPosition3 = "";
+        nextPosition4 = "";
+        showAllButtons();
     }
 
     public void cutself(){
