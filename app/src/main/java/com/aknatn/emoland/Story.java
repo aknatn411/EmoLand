@@ -53,15 +53,15 @@ public class Story {
 
     public void poetry() {
         gs.image.setImageResource(R.drawable.think);
-        PoetryBuilder pb = new PoetryBuilder();
-        List<Integer> opts1 = pb.randLine1();
+        //PoetryBuilder pb = new PoetryBuilder();
+        //List<Integer> opts1 = pb.randLine1();
         gs.text.setText("You are not ready to write poetry.");
-        String str1 = "";
+        /*String str1 = "";
         for(int i = 0; i < opts1.size(); i++){
             str1 += opts1.get(i).toString() + " - ";
-        }
+        }*/
         gs.button1.setText("Back");
-        gs.button2.setText(str1);
+        gs.button2.setText("");
         gs.button3.setText("");
         gs.button4.setText("");
 
@@ -131,7 +131,7 @@ public class Story {
         int max = 5;
         int num = (int)(Math.random()*(max-min+1)+min);
         gs.updateFollowers(num);
-        startingPoint();
+        selectPosition("startingPoint");
     }
 
     public void mope(){
