@@ -104,7 +104,10 @@ public class Story {
     }
 
     public void posted() {
-        gs.updateFollowers(1);
+        int min = 1;
+        int max = 5;
+        int num = (int)(Math.random()*(max-min+1)+min);
+        gs.updateFollowers(num);
         startingPoint();
     }
 
