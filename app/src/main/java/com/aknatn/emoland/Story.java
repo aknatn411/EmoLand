@@ -23,8 +23,8 @@ public class Story {
             case "cutself": cutself(); break;
             case "ouch": ouch(); break;
             case "post": post(); break;
-            case "posted": posted();
-            case "poetry": poetry();
+            case "posted": posted(); break;
+            case "poetry": poetry(); break;
         }
     }
 
@@ -49,26 +49,29 @@ public class Story {
         nextPosition3 = "leave";
         nextPosition4 = "poetry";
         showAllButtons();
+        if(gs.minutesMoped > 240){
+            gs.text.setText("You are in your room. You have now moped enough to write poetry.");
+            gs.button4.setVisibility(View.VISIBLE);
+        }else{
+            gs.button4.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void poetry() {
         gs.image.setImageResource(R.drawable.think);
-        //PoetryBuilder pb = new PoetryBuilder();
-        //List<Integer> opts1 = pb.randLine1();
-        gs.text.setText("You are not ready to write poetry.");
-        /*String str1 = "";
-        for(int i = 0; i < opts1.size(); i++){
-            str1 += opts1.get(i).toString() + " - ";
-        }*/
-        gs.button1.setText("Back");
-        gs.button2.setText("");
-        gs.button3.setText("");
-        gs.button4.setText("");
 
-        nextPosition1 = "startingPoint";
-        nextPosition2 = "";
-        nextPosition3 = "";
-        nextPosition4 = "";
+        PoetryBuilder pb = new PoetryBuilder();
+        String poem = pb.GeneratePoem();
+        gs.text.setText(poem);
+        gs.button1.setText("Post to Y");
+        gs.button2.setText("Post to ProfileBook");
+        gs.button3.setText("Post to QuickPhotoGram");
+        gs.button4.setText("Post to Jizzle");
+
+        nextPosition1 = "posted";
+        nextPosition2 = "posted";
+        nextPosition3 = "posted";
+        nextPosition4 = "posted";
         showAllButtons();
     }
 
@@ -156,6 +159,9 @@ public class Story {
         gs.image.setImageResource(R.drawable.think);
         gs.text.setText("5 minutes later....\n\nI'm bored...\n\nContinue to mope?");
 
+        gs.minutesMoped += 5;
+        gs.updateFollowers(0);
+
         gs.button1.setText("Yes");
         gs.button2.setText("No");
         gs.button3.setText("");
@@ -173,6 +179,9 @@ public class Story {
     public void mope1hour(){
         gs.image.setImageResource(R.drawable.think);
         gs.text.setText("1 hour later....\n\nI'm bored...\n\nContinue to mope?");
+
+        gs.minutesMoped += 60;
+        gs.updateFollowers(0);
 
         gs.button1.setText("Yes");
         gs.button2.setText("No");

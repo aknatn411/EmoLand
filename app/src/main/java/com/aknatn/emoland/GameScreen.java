@@ -15,6 +15,7 @@ public class GameScreen extends AppCompatActivity {
     Button button1, button2, button3, button4;
     Story story = new Story(this);
     int numFollowers;
+    int minutesMoped;
     TextView numFollowersText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,6 @@ public class GameScreen extends AppCompatActivity {
 
     public void updateFollowers(int newFollowers){
         numFollowers += newFollowers;
-        numFollowersText.setText("You have " + numFollowers + " followers.");
+        numFollowersText.setText(numFollowers + " followers. Minutes moped: " + minutesMoped + ".");
     }
 }

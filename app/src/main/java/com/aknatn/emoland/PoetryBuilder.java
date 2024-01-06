@@ -1,5 +1,6 @@
 package com.aknatn.emoland;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PoetryBuilder {
@@ -9,6 +10,10 @@ public class PoetryBuilder {
     List<String> Line4Options;
 
     public PoetryBuilder(){
+        Line1Options = new ArrayList<>();
+        Line2Options = new ArrayList<>();
+        Line3Options = new ArrayList<>();
+        Line4Options = new ArrayList<>();
         Line1Options.add("This is the start 1");
         Line1Options.add("This is the start 2");
         Line1Options.add("This is the start 3");
@@ -27,17 +32,15 @@ public class PoetryBuilder {
         Line4Options.add("This is the end, 4");
     }
 
-    public List<Integer> randLine1(){
-        List<Integer> opts = null;
+    public String GeneratePoem(){
+        String str = "";
         int min = 0;
-        int max = Line1Options.size();
-        for (int i=0; opts.size() < 2; i++){
-            int num = (int)(Math.random()*(max-min+1)+min);
-            if(! opts.contains(num)){
-                opts.add(num);
-            }
-        }
+        int max = 4;
+        str = Line1Options.get((int)(Math.random()*(max-min)+min));
+        str += "\n"  + Line2Options.get((int)(Math.random()*(max-min)+min));
+        str += "\n"  + Line3Options.get((int)(Math.random()*(max-min)+min));
+        str += "\n"  + Line4Options.get((int)(Math.random()*(max-min)+min));
 
-        return opts;
+        return str;
     }
 }
